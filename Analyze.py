@@ -9,9 +9,12 @@ def extra_points(bool, types, ito_dict):
 
 
 def analyze(file, male):
-    with open('Tests/' + file, 'r', encoding='utf-8') as csvfile:
-        data = csv.reader(csvfile, delimiter=',')
-        res = [[i[0], i[1].split(), i[2].split()] for i in data]
+    try:
+        with open('Tests/' + file, 'r', encoding='utf-8') as csvfile:
+            data = csv.reader(csvfile, delimiter=',')
+            res = [[i[0], i[1].split(), i[2].split()] for i in data]
+    except FileNotFoundError:
+        print('Некорректное имя файла')
 
     with open('Keys.json') as jsonfile:
         f = jsonfile.read()

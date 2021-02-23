@@ -1,8 +1,8 @@
 from Analyze import analyze
 from Graphic import graphic
 
-FILE = 'b919.csv'
-MALE = True
+FILE = 'test_res.csv'  # Имя файла
+MALE = False  # Пол
 
 
 if __name__ == '__main__':
