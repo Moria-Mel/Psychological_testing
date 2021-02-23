@@ -1,7 +1,6 @@
 import pygame
 
 
-
 pygame.init()
 screen = pygame.display.set_mode((480, 420))
 keys_list = ['Г', 'Ц', 'Л', 'А', 'С', 'П', 'Ш', 'Э', 'И', 'Н', 'К', 'О',
