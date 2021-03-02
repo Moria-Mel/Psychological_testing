@@ -25,22 +25,25 @@ def analyze(file, male):
                  'Д', 'Т', 'В', 'Е', 'd', 'М', 'Ф']
     ito_dict = {i: 0 for i in keys_list}
     for row in res:
+        #print(row)
         for answ in row[1]:
             try:
                 for plus in data['Лучшие'][row[0]][str(answ)]:
                     if plus in ito_dict.keys():
                         ito_dict[plus] += 1
-                    # print(row[0], answ, plus, '+')
-            except Exception:
-                print(row[0], answ, plus, '+', 'error')
+                        print(row[0], answ, plus, '+')
+            except Exception as error1:
+                #print(error1)
+                pass
         for answ in row[2]:
             try:
                 for plus in data['Худшие'][row[0]][str(answ)]:
                     if plus in ito_dict.keys():
                         ito_dict[plus] += 1
-                    #  print(row[0], answ, plus, '-')
+                        print(row[0], answ, plus, '-')
             except Exception as error:
-                print(error)
+                #print(error)
+                pass
     for answ in res[5][1]:
         try:
             V += data['Алкоголизация']['Лучшие'][str(answ)]
@@ -51,7 +54,7 @@ def analyze(file, male):
             V += data['Алкоголизация']['Худшие'][str(answ)]
         except KeyError:
             pass
-
+    #ito_dict = {'А': 1, 'Г': 5, 'Н': 7, 'М': 4, 'Э': 13, 'Ш': 4, 'Д': 3, 'П': 2, 'И': 3, 'В': 1, 'Ц': 3, 'Е': 2, 'd': 1, 'К': 1, 'Ф': 1, 'С': 1, 'Л': 0, 'О': 0, 'Т': 0}
     extra_points_dict = {ito_dict['Г'] <= 1: 'ПС', ito_dict['Ц'] >= 6: 'Л', ito_dict['А'] >= 4: 'Л',
                          ito_dict['П'] <= 1: 'Н', ito_dict['Н'] <= 1: 'П', ito_dict['К'] == 0: 'ШШИ',
                          ito_dict['К'] == 1: 'Ш', ito_dict['Д'] >= 6: 'Н',

@@ -4,7 +4,7 @@ import pygame
 pygame.init()
 screen = pygame.display.set_mode((480, 420))
 keys_list = ['Г', 'Ц', 'Л', 'А', 'С', 'П', 'Ш', 'Э', 'И', 'Н', 'К', 'О',
-                 'Д', 'Т', 'В', 'Е', 'd', 'М', 'Ф']
+             'Д', 'Т', 'В', 'Е', 'd', 'М', 'Ф']
 x_line = 330
 y_line = 60
 place_dict = {keys_list[i]: y_line + 20 * i for i in range(len(keys_list))}
