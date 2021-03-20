@@ -8,12 +8,14 @@ keys = ['Г', 'Ц', 'Л', 'А', 'С', 'П', 'Ш', 'Э', 'И', 'Н', 'К', '?', '
 marks_dict = {i: [] for i in keys}
 mot_dict = {i: [] for i in keys}
 hours_dict = {i: [] for i in keys}
+a_dict = {i: 0 for i in keys}
 
 
 def add_to_dicts(name, i):
     marks_dict[name].append(float(i[1]))
     hours_dict[name].append(float(i[2]))
     mot_dict[name].append(float(i[3]))
+    a_dict[name] += 1
 
 
 for i in dat:
@@ -28,3 +30,5 @@ for i in dat:
 print(marks_dict)
 print(hours_dict)
 print(mot_dict)
+print(a_dict)
+
