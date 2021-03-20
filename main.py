@@ -1,7 +1,7 @@
 from Analyze import analyze
 from Graphic import graphic
 
-FILE = 'test_test.csv'  # Имя файла
+FILE = 'v927.csv'  # Имя файла
 MALE = False  # Пол
 
 
