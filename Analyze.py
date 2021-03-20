@@ -5,7 +5,10 @@ import json
 def extra_points(bool, types, ito_dict):
     if bool:
         for type in types:
-            ito_dict[type] += 1
+            try:
+                ito_dict[type] += 1
+            except:
+                print(types)
 
 
 def analyze(file, male):
